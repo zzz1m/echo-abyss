@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://basic_particle_01"]
+
+[ext_resource type="Script" path="res://scripts/effects/basic_particle.gd" id="1_particle"]
+
+[node name="BasicParticle" type="Node2D"]
+script = ExtResource("1_particle")
+
+[node name="Sprite" type="Sprite2D" parent="."]
