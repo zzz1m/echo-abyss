@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7r4n5s6t8u9v0"]
+
+[ext_resource type="Script" path="res://scripts/core/game.gd" id="1_game"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_game")
+
+[node name="LevelContainer" type="Node2D" parent="."]
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+
+[node name="ItemSpawner" type="Node2D" parent="."]
+
+[node name="GameHUD" parent="." instance=ExtResource("res://scenes/ui/hud/game_hud.tscn")]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://f5g6h7i8j9k0l1"]
+
+[ext_resource type="Script" path="res://scripts/characters/player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/characters/player/state_machine.gd" id="2_sm"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/idle_state.gd" id="3_idle"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/walk_state.gd" id="4_walk"]
+[ext_resource type="Script" path="res://scripts/characters/player/states/attack_state.gd" id="5_attack"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_player")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("res://assets/images/characters/player/placeholder_player.png")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_player")
+
+[node name="HitboxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(24, -16)
+shape = SubResource("CircleShape2D_hitbox")
+
+[node name="HurtboxArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 16
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_hurtbox")
+
+[node name="StateMachine" type="Node" parent="." script=ExtResource("2_sm")]
+initial_state = ExtResource("3_idle")
+
+[node name="Idle" type="Node" parent="StateMachine" script=ExtResource("3_idle")]
+
+[node name="Walk" type="Node" parent="StateMachine" script=ExtResource("4_walk")]
+
+[node name="Attack" type="Node" parent="StateMachine" script=ExtResource("5_attack")]
+
+[node name="Skill" type="Node" parent="StateMachine"]
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+
+[node name="Dead" type="Node" parent="StateMachine"]
+
+[node name="SkillSystem" type="Node" parent="."]
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="DamageNumbers" type="Node2D" parent="Effects"]
+
+[node name="Particles" type="Node2D" parent="Effects"]
