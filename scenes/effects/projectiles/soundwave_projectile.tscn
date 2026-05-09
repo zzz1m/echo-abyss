@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://soundwave_proj_01"]
+
+[ext_resource type="Script" path="res://scripts/combat/hitbox.gd" id="1_hitbox"]
+
+[node name="SoundwaveProjectile" type="Area2D"]
+script = ExtResource("1_hitbox")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(40, 20)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.8, 0.2, 0.8, 0.8)
+scale = Vector2(40, 20)

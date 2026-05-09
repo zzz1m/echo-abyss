@@ -190,3 +190,63 @@ func resume_audio() -> void:
         player.process_mode = Node.PROCESS_MODE_PAUSED
     if ambient_player:
         ambient_player.process_mode = Node.PROCESS_MODE_ALWAYS
+
+
+func play_skill_sfx(skill_key: String) -> void:
+    match skill_key:
+        "Q":
+            play_sfx("res://assets/audio/sfx/combat/skill_echo_wave.ogg")
+        "W":
+            play_sfx("res://assets/audio/sfx/combat/skill_sonar.ogg")
+        "E":
+            play_sfx("res://assets/audio/sfx/combat/skill_silence.ogg")
+        "R":
+            play_sfx("res://assets/audio/sfx/combat/skill_ultimate.ogg")
+
+
+func play_ui_sfx(sfx_name: String) -> void:
+    match sfx_name:
+        "click":
+            play_sfx("res://assets/audio/sfx/ui/click.ogg")
+        "hover":
+            play_sfx("res://assets/audio/sfx/ui/hover.ogg")
+        "open":
+            play_sfx("res://assets/audio/sfx/ui/menu_open.ogg")
+        "close":
+            play_sfx("res://assets/audio/sfx/ui/menu_close.ogg")
+        "purchase":
+            play_sfx("res://assets/audio/sfx/ui/purchase.ogg")
+        "error":
+            play_sfx("res://assets/audio/sfx/ui/error.ogg")
+
+
+func play_combat_sfx(sfx_name: String) -> void:
+    match sfx_name:
+        "hit":
+            play_sfx("res://assets/audio/sfx/combat/hit.ogg")
+        "critical":
+            play_sfx("res://assets/audio/sfx/combat/critical.ogg")
+        "dodge":
+            play_sfx("res://assets/audio/sfx/combat/dodge.ogg")
+        "death":
+            play_sfx("res://assets/audio/sfx/combat/death.ogg")
+        "enemy_hit":
+            play_sfx("res://assets/audio/sfx/combat/enemy_hit.ogg")
+        "boss_damage":
+            play_sfx("res://assets/audio/sfx/combat/boss_damage.ogg")
+
+
+func play_zone_music(zone_name: String) -> void:
+    match zone_name.to_lower():
+        "forest":
+            play_music("res://assets/audio/music/forest_theme.ogg")
+        "lava":
+            play_music("res://assets/audio/music/lava_theme.ogg")
+        "deepsea":
+            play_music("res://assets/audio/music/deepsea_theme.ogg")
+        "bone":
+            play_music("res://assets/audio/music/bone_theme.ogg")
+        "abyss":
+            play_music("res://assets/audio/music/abyss_theme.ogg")
+        _:
+            play_music("res://assets/audio/music/forest_theme.ogg")

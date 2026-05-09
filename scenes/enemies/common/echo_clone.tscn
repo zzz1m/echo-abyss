@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://echo_clone_01"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_specter.gd" id="1_clone"]
+
+[node name="EchoClone" type="CharacterBody2D"]
+script = ExtResource("1_clone")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.8, 0.2, 0.8, 0.5)
+scale = Vector2(32, 48)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 1.2)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea"]
+scale = Vector2(0.8, 1.2)

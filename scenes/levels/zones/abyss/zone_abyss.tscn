@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://zone_abyss_01"]
+
+[node name="ZoneAbyss" type="Node2D">
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -800.0
+offset_top = -600.0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.02, 0.0, 0.05, 1)
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -700.0
+offset_top = -500.0
+offset_right = 700.0
+offset_bottom = 500.0
+color = Color(0.05, 0.02, 0.08, 1)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallTop" type="ColorRect" parent="Walls"]
+offset_left = -750.0
+offset_top = -550.0
+offset_right = 750.0
+offset_bottom = -500.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="WallBottom" type="ColorRect" parent="Walls"]
+offset_left = -750.0
+offset_top = 500.0
+offset_right = 750.0
+offset_bottom = 550.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="WallLeft" type="ColorRect" parent="Walls"]
+offset_left = -750.0
+offset_top = -500.0
+offset_right = -700.0
+offset_bottom = 500.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="WallRight" type="ColorRect" parent="Walls"]
+offset_left = 700.0
+offset_top = -500.0
+offset_right = 750.0
+offset_bottom = 500.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="VoidParticles" type="Node2D" parent="."]
+
+[node name="VoidLabel" type="Label" parent="."]
+offset_left = -100.0
+offset_top = -450.0
+offset_right = 100.0
+offset_bottom = -400.0
+text = "深渊核心"
+horizontal_alignment = 1
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(0, 0)
+
+[node name="BossAltar" type="Marker2D" parent="."]
+position = Vector2(0, -100)
