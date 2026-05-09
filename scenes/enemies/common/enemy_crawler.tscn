@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://enemy_crawler_01"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_crawler.gd" id="1_crawler"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_ai.gd" id="2_ai"]
+
+[node name="EnemyCrawler" type="CharacterBody2D"]
+script = ExtResource("1_crawler")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.3, 0.2, 0.4, 1)
+scale = Vector2(40, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(1.0, 0.8)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea"]
+scale = Vector2(1.0, 0.8)
+
+[node name="HurtboxArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxArea"]
+scale = Vector2(1.0, 0.8)
+
+[node name="EnemyAI" type="Node" parent="." script=ExtResource("2_ai")]

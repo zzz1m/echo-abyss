@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://shockwave_01"]
+
+[node name="Shockwave" type="Area2D"]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(200, 200)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(200, 200)

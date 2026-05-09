@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://enemy_specter_01"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_specter.gd" id="1_specter"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_ai.gd" id="2_ai"]
+
+[node name="EnemySpecter" type="CharacterBody2D"]
+script = ExtResource("1_specter")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.5, 0.3, 0.8, 0.8)
+scale = Vector2(48, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(1.2, 1.6)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea"]
+scale = Vector2(1.2, 1.6)
+
+[node name="HurtboxArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxArea"]
+scale = Vector2(1.2, 1.6)
+
+[node name="EnemyAI" type="Node" parent="." script=ExtResource("2_ai")]
